@@ -11,9 +11,6 @@ const dbInfo =
         database: process.env.DATABASE, //DB 내 사용 database
     };
 
-console.log("DBINFO");
-console.log(dbInfo);
-console.log("DBINFO");
 //모듈화
 //pool에 DB 정보를 담아 연결한 Pool 저장
 const pool = mysql.createPool(dbInfo).promise();
