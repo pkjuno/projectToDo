@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Page - TODO List</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #77c1b2 3px solid;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+        }
+        header li {
+            float: left;
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+        header #branding {
+            float: left;
+        }
+        header #branding h1 {
+            margin: 0;
+        }
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+        #main {
+            padding: 20px;
+            background: #fff;
+            margin-top: 20px;
+        }
+        .card {
+            background: #fff;
+            border: #ccc 1px solid;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .card h3 {
+            margin-top: 0;
+        }
+        .todo-list {
+            list-style: none;
+            padding: 0;
+        }
+        .todo-list li {
+            padding: 10px;
+            background: #f4f4f4;
+            border-bottom: 1px #ccc dotted;
+        }
+        .todo-list li:last-child {
+            border-bottom: none;
+        }
+        .btn {
+            display: inline-block;
+            font-size: 16px;
+            padding: 10px 20px;
+            cursor: pointer;
+            text-decoration: none;
+            background: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background: #555;
+        }
+        .form-control {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <div id="branding">
+            <h1><span class="highlight">My</span> Page</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div class="container">
+    <div id="main">
+        <div class="card">
+            <h3>Welcome, <%= session.user_name %>!</h3>
+            <p>Email: <%= session.user_email %></p>
+            <hr>
+            <h3>Your TODO List</h3>
+            <ul class="todo-list">
+
+            </ul>
+            <form id="addTodoForm" method="post" action="/addTodo">
+                <input type="text" name="task" placeholder="New Task" class="form-control">
+                <input type="submit" value="Add Task" class="btn">
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
