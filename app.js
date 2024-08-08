@@ -25,12 +25,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/adminlte', express.static(path.join(__dirname, 'node_modules/admin-lte')));
 
 app.use(session({
+    name: 'sessionName',
     resave: false,
     saveUninitialized: false,
     secret: process.env.COOKIE_SECRET,
     cookie: {
         httpOnly: true,
         secure: false,
+        maxAge: 60 * 60 * 1000
     }
 }));
 app.use(passport.initialize()); // req.user / req.login / req.isAuthenticate, req.logout 생성
@@ -44,6 +46,11 @@ app.use('/auth', authRouter);
 
 app.get('/', (req, res) => {
     res.render('main', {session: req.session });
+});
+
+app.get('/check-session', (req, res) => {
+    console.log('Current session:', req.session);
+    res.send('Check console for session status.');
 });
 
 app.get('/main', (req, res)=>{

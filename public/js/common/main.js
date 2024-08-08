@@ -10,8 +10,6 @@ $(function(){
           alert("아이디와 비밀번호를 입력해주세요");
           return false;
       }else {
-
-
           const formData = $("#loginForm").serialize();
 
           $.ajax({
@@ -33,6 +31,6 @@ $(function(){
    });
     /* 카카오 로그인 */
     $("#kakaoLoginBtn").click(function(){
-        location.href="/user/kakao";
+        location.href="/auth/kakao";
     });
 });

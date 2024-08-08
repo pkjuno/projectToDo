@@ -13,13 +13,8 @@ module.exports = () => {
         try {
             // const exUser = await User.findOne({ where: { email } });
             const exUser = await  User.findByEmailAndPass(email, password);
-            console.log(`exUser: ${exUser.user_email}`);
-            console.log(`exUser: ${exUser.user_password}`);
             if (exUser) {
                 const result = true;//await bcrypt.compare(password, exUser.user_password);
-                console.log("-----------------------------result");
-                console.log(result);
-                console.log("-----------------------------result");
                 if (result) {
                     done(null, exUser);
                 } else {
