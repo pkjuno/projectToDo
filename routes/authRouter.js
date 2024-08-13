@@ -4,6 +4,10 @@ const router = express.Router();
 const { isLoggedIn, isNotLoggedIn } = require('../middleWares');
 const { login, logout } = require('../controllers/authController');
 
+router.get('/loginPage', isNotLoggedIn, (req,res)=>{
+    res.render('user/loginPage');
+});
+
 // POST /auth/login
 router.post('/login', isNotLoggedIn, login);
 

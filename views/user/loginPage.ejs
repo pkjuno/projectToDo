@@ -1,0 +1,72 @@
+<%- contentFor('contents') %>
+<main>
+    <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+        <div class="row align-items-center g-lg-5 py-5">
+            <div class="col-lg-7 text-center text-lg-start">
+                <h1 class="display-4 fw-bold lh-1 mb-3">로그인을 해주세요</h1>
+                <p class="col-lg-10 fs-4">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+            </div>
+            <div class="col-md-10 mx-auto col-lg-5">
+                <form class="p-4 p-md-5 border rounded-3 bg-light" id="loginForm" action="/auth/login" method="POST">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="userEmail" name="user_email" placeholder="name@example.com">
+                        <label for="floatingInput">이메일</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="password" name="user_password" placeholder="Password">
+                        <label for="floatingPassword">비밀번호</label>
+                    </div>
+                    <div class="checkbox mb-3">
+                        <label>
+                            <input type="checkbox" value="remember-me"> 이메일 기억하기
+                        </label>
+                    </div>
+                    <button id="loginBtn" class="w-100 btn btn-lg btn-primary">로그인</button>
+                    <button id="kakaoLoginBtn" class="w-100 btn btn-lg btn-primary mt-2">카카오 로그인</button>
+                    <hr class="my-4">
+                    <small class="mt-5 mb-3 text-muted">© Since 2024</small>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+<script>
+    $(function(){
+        /* 로그인 처리 */
+        $("#loginBtn").click(function(){
+            /* 아이디 비밀번호 입력 체크*/
+            const userEmail    = $("#userEmail").val();
+            const userPassword = $("#password").val();
+
+            if ( !userEmail && !userPassword ) {
+                alert("아이디와 비밀번호를 입력해주세요");
+                return false;
+            }else {
+
+                $("#loginForm").submit();
+
+                // const formData = $("#loginForm").serialize();
+                //
+                // $.ajax({
+                //     type: 'POST',
+                //     url: '/auth/login',
+                //     data: formData,
+                //     success: function(response) {
+                //         console.log("Server Response:", response);
+                //         if ( response.success ){
+                //             window.location.href="/user/myPage";
+                //         }
+                //     },
+                //     error: function(xhr, status, error) {
+                //         console.error("Login Error:", error);
+                //         // Handle error (e.g., show an error message)
+                //     }
+                // });
+            }
+        });
+        /* 카카오 로그인 */
+        $("#kakaoLoginBtn").click(function(){
+            location.href="/auth/kakao";
+        });
+    });
+</script>

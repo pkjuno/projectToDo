@@ -1,4 +1,5 @@
 const express = require('express');
+const {isNotLoggedIn, isLoggedIn} = require("../middleWares");
 const router = express.Router();
 
 router.use( (req, res, next) => {
@@ -6,7 +7,7 @@ router.use( (req, res, next) => {
     next();
 });
 
-router.get('/myPage', (req, res)=>{
+router.get('/myPage', isLoggedIn, (req, res)=>{
     const user = req.user; // 사용자 정보를 가져옵니다.
     console.info(`req :::::::  ${req} `);
     console.log(`user :::::: router :::::  ${user}`);

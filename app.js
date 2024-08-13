@@ -8,6 +8,7 @@ const session = require('express-session');
 const dotenv = require('dotenv');
 const passport = require('passport');
 const passportConfig = require('./passport/passport');
+const layout = require('express-ejs-layouts');
 
 dotenv.config();
 const userRouter = require('./routes/userRouter');
@@ -16,6 +17,11 @@ const app = express();
 passportConfig();
 const hostname = '127.0.0.1';
 const port = 3000;
+
+app.use(layout);
+app.set('layout', 'layouts/layout');
+app.set('layout extractScripts', true);
+app.set('layout extractStyles', true);
 
 app.use(bodyParser.json());
 app.use(cookieParser(process.env.COOKIE_SECRET));
@@ -45,7 +51,7 @@ app.use('/user', userRouter); // 라우터 접두어 설정
 app.use('/auth', authRouter);
 
 app.get('/', (req, res) => {
-    res.render('main', {session: req.session });
+    res.render('home', {session: req.session });
 });
 
 app.get('/check-session', (req, res) => {

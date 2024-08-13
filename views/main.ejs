@@ -1,69 +1,434 @@
 <%- include('common/header', { title: 'Main' }) %>
-    <body class="login-page" style="min-height: 494.802px;">
-    <div class="login-box">
-        <div class="login-logo">
-            <a href="../../index2.html"><b>Project</b>TODO</a>
+<body class="hold-transition">
+<div class="wrapper">
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="/" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="/auth/loginPage" class="nav-link">로그인</a>
+            </li>
+        </ul>
+    </nav>
+    <!-- /.navbar -->
+
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <!-- Brand Logo -->
+        <a href="/" class="brand-link">
+            <img src="/adminlte/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+            <span class="brand-text font-weight-light">Project TODO</span>
+        </a>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <!-- Sidebar Menu -->
+            <nav class="mt-2">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- /.sidebar-menu -->
+        </div>
+        <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper" style="min-height: 784.667px;">
+
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0">Dashboard</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">Dashboard v1</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="card">
-            <div class="card-body login-card-body">
-                <p class="login-box-msg">세션을 시작하려면 로그인을 하세요</p>
-                <form action="/auth/login" method="post" id="loginForm">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Email" name="user_email" id="userEmail">
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <span class="fas fa-envelope"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="Password" name="user_password" id="userPassword">
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <span class="fas fa-lock"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-8">
-                            <div class="icheck-primary">
-                                <input type="checkbox" id="remember">
-                                <label for="remember">
-                                    자동 로그인
-                                </label>
-                            </div>
-                        </div>
 
-                        <div class="col-4">
-                            <button type="submit" id='loginBtn' class="btn btn-primary btn-block">로그인</button>
-                        </div>
+        <section class="content">
+            <div class="container-fluid">
 
+                <div class="row">
+                    <div class="col-lg-4 col-8">
+
+                        <div class="small-box bg-info">
+                            <div class="inner text-center">
+                                <h3>150</h3>
+                                <p>게시글</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-bag"></i>
+                            </div>
+                            <a href="#" class="small-box-footer">더보기 <i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
                     </div>
-                </form>
-                <div class="social-auth-links text-center mb-3">
-                    <p>- OR -</p>
-                    <a href="#" class="btn btn-block btn-primary">
-                         페이스북 로그인
-                    </a>
-                    <a href="#" class="btn btn-block btn-danger">
-                         구글 로그인
-                    </a>
-                    <a id="kakaoLoginBtn" href="javascript:void(0);" class="btn btn-block btn-social btn-kakao">
-                         카카오 로그인
-                    </a>
+
+                    <div class="col-lg-4 col-8">
+
+                        <div class="small-box bg-warning">
+                            <div class="inner text-center">
+                                <h3>44</h3>
+                                <p>회원수</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-person-add"></i>
+                            </div>
+                            <a href="#" class="small-box-footer">더보기 <i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-8">
+
+                        <div class="small-box bg-danger">
+                            <div class="inner text-center">
+                                <h3>65</h3>
+                                <p>방문자수</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-pie-graph"></i>
+                            </div>
+                            <a href="#" class="small-box-footer">더보기 <i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+
                 </div>
 
-                <p class="mb-1">
-                    <a href="#">비밀번호 찾기</a>
-                </p>
-                <p class="mb-1">
-                    <a href="#">회원가입</a>
-                </p>
-            </div>
 
-        </div>
+                <div class="row">
+
+                    <section class="col-lg-7 connectedSortable ui-sortable">
+                        <div class="card">
+                            <div class="card-header ui-sortable-handle" style="cursor: move;">
+                                <h3 class="card-title">
+                                    <i class="ion ion-clipboard mr-1"></i>
+                                    To Do List
+                                </h3>
+                                <div class="card-tools">
+                                    <ul class="pagination pagination-sm">
+                                        <li class="page-item"><a href="#" class="page-link">«</a></li>
+                                        <li class="page-item"><a href="#" class="page-link">1</a></li>
+                                        <li class="page-item"><a href="#" class="page-link">2</a></li>
+                                        <li class="page-item"><a href="#" class="page-link">3</a></li>
+                                        <li class="page-item"><a href="#" class="page-link">»</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="card-body">
+                                <ul class="todo-list ui-sortable" data-widget="todo-list">
+                                    <li>
+                                        <span class="handle ui-sortable-handle">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </span>
+
+                                        <div class="icheck-primary d-inline ml-2">
+                                            <input type="checkbox" value="" name="todo1" id="todoCheck1">
+                                            <label for="todoCheck1"></label>
+                                        </div>
+
+                                        <span class="text">Design a nice theme</span>
+
+                                        <small class="badge badge-danger"><i class="far fa-clock"></i> 2 mins</small>
+
+                                        <div class="tools">
+                                            <i class="fas fa-edit"></i>
+                                            <i class="fas fa-trash-o"></i>
+                                        </div>
+                                    </li>
+                                    <li class="done">
+                                        <span class="handle ui-sortable-handle">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </span>
+                                        <div class="icheck-primary d-inline ml-2">
+                                            <input type="checkbox" value="" name="todo2" id="todoCheck2" checked="">
+                                            <label for="todoCheck2"></label>
+                                        </div>
+                                        <span class="text">Make the theme responsive</span>
+                                        <small class="badge badge-info"><i class="far fa-clock"></i> 4 hours</small>
+                                        <div class="tools">
+                                            <i class="fas fa-edit"></i>
+                                            <i class="fas fa-trash-o"></i>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span class="handle ui-sortable-handle">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </span>
+                                        <div class="icheck-primary d-inline ml-2">
+                                            <input type="checkbox" value="" name="todo3" id="todoCheck3">
+                                            <label for="todoCheck3"></label>
+                                        </div>
+                                        <span class="text">Let theme shine like a star</span>
+                                        <small class="badge badge-warning"><i class="far fa-clock"></i> 1 day</small>
+                                        <div class="tools">
+                                            <i class="fas fa-edit"></i>
+                                            <i class="fas fa-trash-o"></i>
+                                        </div>
+                                    </li>
+                                    <li>
+<span class="handle ui-sortable-handle">
+<i class="fas fa-ellipsis-v"></i>
+<i class="fas fa-ellipsis-v"></i>
+</span>
+                                        <div class="icheck-primary d-inline ml-2">
+                                            <input type="checkbox" value="" name="todo4" id="todoCheck4">
+                                            <label for="todoCheck4"></label>
+                                        </div>
+                                        <span class="text">Let theme shine like a star</span>
+                                        <small class="badge badge-success"><i class="far fa-clock"></i> 3 days</small>
+                                        <div class="tools">
+                                            <i class="fas fa-edit"></i>
+                                            <i class="fas fa-trash-o"></i>
+                                        </div>
+                                    </li>
+                                    <li>
+<span class="handle ui-sortable-handle">
+<i class="fas fa-ellipsis-v"></i>
+<i class="fas fa-ellipsis-v"></i>
+</span>
+                                        <div class="icheck-primary d-inline ml-2">
+                                            <input type="checkbox" value="" name="todo5" id="todoCheck5">
+                                            <label for="todoCheck5"></label>
+                                        </div>
+                                        <span class="text">Check your messages and notifications</span>
+                                        <small class="badge badge-primary"><i class="far fa-clock"></i> 1 week</small>
+                                        <div class="tools">
+                                            <i class="fas fa-edit"></i>
+                                            <i class="fas fa-trash-o"></i>
+                                        </div>
+                                    </li>
+                                    <li>
+<span class="handle ui-sortable-handle">
+<i class="fas fa-ellipsis-v"></i>
+<i class="fas fa-ellipsis-v"></i>
+</span>
+                                        <div class="icheck-primary d-inline ml-2">
+                                            <input type="checkbox" value="" name="todo6" id="todoCheck6">
+                                            <label for="todoCheck6"></label>
+                                        </div>
+                                        <span class="text">Let theme shine like a star</span>
+                                        <small class="badge badge-secondary"><i class="far fa-clock"></i> 1 month</small>
+                                        <div class="tools">
+                                            <i class="fas fa-edit"></i>
+                                            <i class="fas fa-trash-o"></i>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="card-footer clearfix">
+                                <button type="button" class="btn btn-primary float-right"><i class="fas fa-plus"></i> Add item</button>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="row">
+                                <div class="col-12" id="accordion">
+                                    <div class="card card-primary card-outline">
+                                        <a class="d-block w-100" data-toggle="collapse" href="#collapseOne">
+                                            <div class="card-header">
+                                                <h4 class="card-title w-100">
+                                                    1. Lorem ipsum dolor sit amet
+                                                </h4>
+                                            </div>
+                                        </a>
+                                        <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                                            <div class="card-body">
+                                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card card-primary card-outline">
+                                        <a class="d-block w-100" data-toggle="collapse" href="#collapseTwo">
+                                            <div class="card-header">
+                                                <h4 class="card-title w-100">
+                                                    2. Aenean massa
+                                                </h4>
+                                            </div>
+                                        </a>
+                                        <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                                            <div class="card-body">
+                                                Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card card-primary card-outline">
+                                        <a class="d-block w-100" data-toggle="collapse" href="#collapseThree">
+                                            <div class="card-header">
+                                                <h4 class="card-title w-100">
+                                                    3. Donec quam felis
+                                                </h4>
+                                            </div>
+                                        </a>
+                                        <div id="collapseThree" class="collapse" data-parent="#accordion">
+                                            <div class="card-body">
+                                                Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card card-warning card-outline">
+                                        <a class="d-block w-100" data-toggle="collapse" href="#collapseFour">
+                                            <div class="card-header">
+                                                <h4 class="card-title w-100">
+                                                    4. Donec pede justo
+                                                </h4>
+                                            </div>
+                                        </a>
+                                        <div id="collapseFour" class="collapse" data-parent="#accordion">
+                                            <div class="card-body">
+                                                Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card card-warning card-outline">
+                                        <a class="d-block w-100" data-toggle="collapse" href="#collapseFive">
+                                            <div class="card-header">
+                                                <h4 class="card-title w-100">
+                                                    5. In enim justo
+                                                </h4>
+                                            </div>
+                                        </a>
+                                        <div id="collapseFive" class="collapse" data-parent="#accordion">
+                                            <div class="card-body">
+                                                In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card card-warning card-outline">
+                                        <a class="d-block w-100" data-toggle="collapse" href="#collapseSix">
+                                            <div class="card-header">
+                                                <h4 class="card-title w-100">
+                                                    6. Integer tincidunt
+                                                </h4>
+                                            </div>
+                                        </a>
+                                        <div id="collapseSix" class="collapse" data-parent="#accordion">
+                                            <div class="card-body">
+                                                Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card card-danger card-outline">
+                                        <a class="d-block w-100" data-toggle="collapse" href="#collapseSeven">
+                                            <div class="card-header">
+                                                <h4 class="card-title w-100">
+                                                    7. Aenean leo ligula
+                                                </h4>
+                                            </div>
+                                        </a>
+                                        <div id="collapseSeven" class="collapse" data-parent="#accordion">
+                                            <div class="card-body">
+                                                Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card card-danger card-outline">
+                                        <a class="d-block w-100" data-toggle="collapse" href="#collapseEight">
+                                            <div class="card-header">
+                                                <h4 class="card-title w-100">
+                                                    8. Aliquam lorem ante
+                                                </h4>
+                                            </div>
+                                        </a>
+                                        <div id="collapseEight" class="collapse" data-parent="#accordion">
+                                            <div class="card-body">
+                                                Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card card-danger card-outline">
+                                        <a class="d-block w-100" data-toggle="collapse" href="#collapseNine">
+                                            <div class="card-header">
+                                                <h4 class="card-title w-100">
+                                                    9. Quisque rutrum
+                                                </h4>
+                                            </div>
+                                        </a>
+                                        <div id="collapseNine" class="collapse" data-parent="#accordion">
+                                            <div class="card-body">
+                                                Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <section class="col-lg-5 connectedSortable ui-sortable">
+                        <div class="card bg-gradient-success">
+                            <div class="card-header border-0 ui-sortable-handle" style="cursor: move;">
+                                <h3 class="card-title">
+                                    <i class="far fa-calendar-alt"></i>
+                                    Calendar
+                                </h3>
+
+                                <div class="card-tools">
+
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown" data-offset="-52">
+                                            <i class="fas fa-bars"></i>
+                                        </button>
+                                        <div class="dropdown-menu" role="menu">
+                                            <a href="#" class="dropdown-item">Add new event</a>
+                                            <a href="#" class="dropdown-item">Clear events</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a href="#" class="dropdown-item">View calendar</a>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-success btn-sm" data-card-widget="collapse">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-success btn-sm" data-card-widget="remove">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+
+                            </div>
+
+                            <div class="card-body pt-0">
+
+                                <div id="calendar" style="width: 100%"><div class="bootstrap-datetimepicker-widget usetwentyfour"><ul class="list-unstyled"><li class="show"><div class="datepicker"><div class="datepicker-days" style=""><table class="table table-sm"><thead><tr><th class="prev" data-action="previous"><span class="fa fa-chevron-left" title="Previous Month"></span></th><th class="picker-switch" data-action="pickerSwitch" colspan="5" title="Select Month">August 2024</th><th class="next" data-action="next"><span class="fa fa-chevron-right" title="Next Month"></span></th></tr><tr><th class="dow">Su</th><th class="dow">Mo</th><th class="dow">Tu</th><th class="dow">We</th><th class="dow">Th</th><th class="dow">Fr</th><th class="dow">Sa</th></tr></thead><tbody><tr><td data-action="selectDay" data-day="07/28/2024" class="day old weekend">28</td><td data-action="selectDay" data-day="07/29/2024" class="day old">29</td><td data-action="selectDay" data-day="07/30/2024" class="day old">30</td><td data-action="selectDay" data-day="07/31/2024" class="day old">31</td><td data-action="selectDay" data-day="08/01/2024" class="day">1</td><td data-action="selectDay" data-day="08/02/2024" class="day">2</td><td data-action="selectDay" data-day="08/03/2024" class="day weekend">3</td></tr><tr><td data-action="selectDay" data-day="08/04/2024" class="day weekend">4</td><td data-action="selectDay" data-day="08/05/2024" class="day">5</td><td data-action="selectDay" data-day="08/06/2024" class="day">6</td><td data-action="selectDay" data-day="08/07/2024" class="day">7</td><td data-action="selectDay" data-day="08/08/2024" class="day">8</td><td data-action="selectDay" data-day="08/09/2024" class="day">9</td><td data-action="selectDay" data-day="08/10/2024" class="day weekend">10</td></tr><tr><td data-action="selectDay" data-day="08/11/2024" class="day weekend">11</td><td data-action="selectDay" data-day="08/12/2024" class="day active today">12</td><td data-action="selectDay" data-day="08/13/2024" class="day">13</td><td data-action="selectDay" data-day="08/14/2024" class="day">14</td><td data-action="selectDay" data-day="08/15/2024" class="day">15</td><td data-action="selectDay" data-day="08/16/2024" class="day">16</td><td data-action="selectDay" data-day="08/17/2024" class="day weekend">17</td></tr><tr><td data-action="selectDay" data-day="08/18/2024" class="day weekend">18</td><td data-action="selectDay" data-day="08/19/2024" class="day">19</td><td data-action="selectDay" data-day="08/20/2024" class="day">20</td><td data-action="selectDay" data-day="08/21/2024" class="day">21</td><td data-action="selectDay" data-day="08/22/2024" class="day">22</td><td data-action="selectDay" data-day="08/23/2024" class="day">23</td><td data-action="selectDay" data-day="08/24/2024" class="day weekend">24</td></tr><tr><td data-action="selectDay" data-day="08/25/2024" class="day weekend">25</td><td data-action="selectDay" data-day="08/26/2024" class="day">26</td><td data-action="selectDay" data-day="08/27/2024" class="day">27</td><td data-action="selectDay" data-day="08/28/2024" class="day">28</td><td data-action="selectDay" data-day="08/29/2024" class="day">29</td><td data-action="selectDay" data-day="08/30/2024" class="day">30</td><td data-action="selectDay" data-day="08/31/2024" class="day weekend">31</td></tr><tr><td data-action="selectDay" data-day="09/01/2024" class="day new weekend">1</td><td data-action="selectDay" data-day="09/02/2024" class="day new">2</td><td data-action="selectDay" data-day="09/03/2024" class="day new">3</td><td data-action="selectDay" data-day="09/04/2024" class="day new">4</td><td data-action="selectDay" data-day="09/05/2024" class="day new">5</td><td data-action="selectDay" data-day="09/06/2024" class="day new">6</td><td data-action="selectDay" data-day="09/07/2024" class="day new weekend">7</td></tr></tbody></table></div><div class="datepicker-months" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev" data-action="previous"><span class="fa fa-chevron-left" title="Previous Year"></span></th><th class="picker-switch" data-action="pickerSwitch" colspan="5" title="Select Year">2024</th><th class="next" data-action="next"><span class="fa fa-chevron-right" title="Next Year"></span></th></tr></thead><tbody><tr><td colspan="7"><span data-action="selectMonth" class="month">Jan</span><span data-action="selectMonth" class="month">Feb</span><span data-action="selectMonth" class="month">Mar</span><span data-action="selectMonth" class="month">Apr</span><span data-action="selectMonth" class="month">May</span><span data-action="selectMonth" class="month">Jun</span><span data-action="selectMonth" class="month">Jul</span><span data-action="selectMonth" class="month active">Aug</span><span data-action="selectMonth" class="month">Sep</span><span data-action="selectMonth" class="month">Oct</span><span data-action="selectMonth" class="month">Nov</span><span data-action="selectMonth" class="month">Dec</span></td></tr></tbody></table></div><div class="datepicker-years" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev" data-action="previous"><span class="fa fa-chevron-left" title="Previous Decade"></span></th><th class="picker-switch" data-action="pickerSwitch" colspan="5" title="Select Decade">2020-2029</th><th class="next" data-action="next"><span class="fa fa-chevron-right" title="Next Decade"></span></th></tr></thead><tbody><tr><td colspan="7"><span data-action="selectYear" class="year old">2019</span><span data-action="selectYear" class="year">2020</span><span data-action="selectYear" class="year">2021</span><span data-action="selectYear" class="year">2022</span><span data-action="selectYear" class="year">2023</span><span data-action="selectYear" class="year active">2024</span><span data-action="selectYear" class="year">2025</span><span data-action="selectYear" class="year">2026</span><span data-action="selectYear" class="year">2027</span><span data-action="selectYear" class="year">2028</span><span data-action="selectYear" class="year">2029</span><span data-action="selectYear" class="year old">2030</span></td></tr></tbody></table></div><div class="datepicker-decades" style="display: none;"><table class="table-condensed"><thead><tr><th class="prev" data-action="previous"><span class="fa fa-chevron-left" title="Previous Century"></span></th><th class="picker-switch" data-action="pickerSwitch" colspan="5">2000-2090</th><th class="next" data-action="next"><span class="fa fa-chevron-right" title="Next Century"></span></th></tr></thead><tbody><tr><td colspan="7"><span data-action="selectDecade" class="decade old" data-selection="2006">1990</span><span data-action="selectDecade" class="decade" data-selection="2006">2000</span><span data-action="selectDecade" class="decade" data-selection="2016">2010</span><span data-action="selectDecade" class="decade active" data-selection="2026">2020</span><span data-action="selectDecade" class="decade" data-selection="2036">2030</span><span data-action="selectDecade" class="decade" data-selection="2046">2040</span><span data-action="selectDecade" class="decade" data-selection="2056">2050</span><span data-action="selectDecade" class="decade" data-selection="2066">2060</span><span data-action="selectDecade" class="decade" data-selection="2076">2070</span><span data-action="selectDecade" class="decade" data-selection="2086">2080</span><span data-action="selectDecade" class="decade" data-selection="2096">2090</span><span data-action="selectDecade" class="decade old" data-selection="2106">2100</span></td></tr></tbody></table></div></div></li><li class="picker-switch accordion-toggle"></li></ul></div></div>
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+            </div>
+        </section>
+
     </div>
-    </body>
-<script src="/js/common/main.js"></script>
+    <!-- /.content-wrapper -->
+
+</div>
+<!-- ./wrapper -->
+</body>
 </html>
