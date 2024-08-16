@@ -1,4 +1,4 @@
-<%- contentFor('contents') %>
+<%- contentFor('body') %>
 <main>
     <div class="container col-xl-10 col-xxl-8 px-4 py-5">
         <div class="row align-items-center g-lg-5 py-5">
@@ -22,16 +22,27 @@
                         </label>
                     </div>
                     <button id="loginBtn" class="w-100 btn btn-lg btn-primary">로그인</button>
-                    <button id="kakaoLoginBtn" class="w-100 btn btn-lg btn-primary mt-2">카카오 로그인</button>
+                </form>
                     <hr class="my-4">
                     <small class="mt-5 mb-3 text-muted">© Since 2024</small>
-                </form>
+
+                <button id="kakaoLoginBtn" class="w-100 btn btn-lg btn-primary mt-2">카카오 로그인</button>
+                <button id="joinBtn" class="w-100 btn btn-lg btn-primary mt-2">회원가입</button>
             </div>
+
         </div>
     </div>
 </main>
 <script>
     $(function(){
+        $(".nav").find("li a").removeClass("active");
+        $(".loginPageNav").addClass("active");
+
+        /* 회원가입 페이지 */
+        $("#joinBtn").click(function(){
+            location.href = "/auth/joinPage";
+        });
+
         /* 로그인 처리 */
         $("#loginBtn").click(function(){
             /* 아이디 비밀번호 입력 체크*/

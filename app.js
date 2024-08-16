@@ -13,6 +13,8 @@ const layout = require('express-ejs-layouts');
 dotenv.config();
 const userRouter = require('./routes/userRouter');
 const authRouter = require('./routes/authRouter');
+const todoRouter = require('./routes/todoRouter');
+
 const app = express();
 passportConfig();
 const hostname = '127.0.0.1';
@@ -49,9 +51,12 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use('/user', userRouter); // 라우터 접두어 설정
 app.use('/auth', authRouter);
+app.use('/todo', todoRouter);
 
 app.get('/', (req, res) => {
-    res.render('home', {session: req.session });
+    const user = req.user; // 사용자 정보를 가져옵니다.
+
+    res.render('home', {session: user });
 });
 
 app.get('/check-session', (req, res) => {

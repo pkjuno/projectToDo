@@ -1,6 +1,10 @@
 const User = require('../models/userModel');
 const passport = require('passport');
 
+exports.join = (req, res, next) => {
+    console.log(req);
+}
+
 exports.login = (req, res, next) => {
     passport.authenticate('local', (err, user, info) => {
         if ( err ){

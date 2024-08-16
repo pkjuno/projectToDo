@@ -1,45 +1,18 @@
-<%- contentFor('contents') %>
-<main>
-    <div class="b-example-divider"></div>
-    <div class="container px-4 py-5" id="hanging-icons">
-        <h2 class="pb-2 border-bottom">Hanging icons</h2>
-        <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-            <div class="col d-flex align-items-start">
-                <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
-                    <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
-                </div>
-                <div>
-                    <h2>Featured title</h2>
-                    <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-                    <a href="#" class="btn btn-primary">
-                        Primary button
-                    </a>
-                </div>
-            </div>
-            <div class="col d-flex align-items-start">
-                <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
-                    <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
-                </div>
-                <div>
-                    <h2>Featured title</h2>
-                    <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-                    <a href="#" class="btn btn-primary">
-                        Primary button
-                    </a>
-                </div>
-            </div>
-            <div class="col d-flex align-items-start">
-                <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
-                    <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
-                </div>
-                <div>
-                    <h2>Featured title</h2>
-                    <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-                    <a href="#" class="btn btn-primary">
-                        Primary button
-                    </a>
-                </div>
-            </div>
-        </div>
+<%- contentFor('body') %>
+<body class="text-bg-dark">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <main class="px-3">
+            <h1>Project ToDo 에 오신 것을 환영합니다</h1>
+            <p class="lead">효율적으로 작업을 관리하고 체계적으로 정리하세요. 우리의 플랫폼은 일일 할 일 목록을 추적하고, 마감일을 설정하며 목표를 달성하는 데 도움을 줍니다.</p>
+            <p class="lead">
+                <a href="/auth/loginPage" class="btn btn-lg btn-secondary fw-bold border-white">시작하기</a>
+            </p>
+        </main>
     </div>
-</main>
+<script>
+    $(function(){
+       $(".nav").find("li a").removeClass("active");
+       $(".homeNav").addClass("active");
+    });
+</script>
+</body>

@@ -2,7 +2,13 @@ const express = require('express');
 const passport = require('passport');
 const router = express.Router();
 const { isLoggedIn, isNotLoggedIn } = require('../middleWares');
-const { login, logout } = require('../controllers/authController');
+const { join, login, logout } = require('../controllers/authController');
+
+router.get('/joinPage', isNotLoggedIn, (req, res) => {
+    res.render('user/joinPage');
+});
+
+router.post('/join', join);
 
 router.get('/loginPage', isNotLoggedIn, (req,res)=>{
     res.render('user/loginPage');

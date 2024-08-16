@@ -1,0 +1,19 @@
+<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom bg-dark">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+        <span class="fs-4 text-white">Project ToDo</span>
+    </a>
+
+    <ul class="nav nav-pills">
+        <li class="nav-item"><a href="/" class="homeNav nav-link text-white" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="/user/myPage" class="myPageNav nav-link text-white">MyPage</a></li>
+        <% if (typeof session !== 'undefined' && session.user_email) { %>
+            <li class="nav-item"><a href="/auth/logout" class="nav-link text-white">LogOut</a></li>
+        <% } else { %>
+            <li class="nav-item"><a href="/auth/loginPage" class="loginPageNav nav-link text-white">LogIn</a></li>
+        <% }  %>
+        <li class="nav-item"><a href="/todo/getTodoList" class="todoNav nav-link text-white">ToDo</a></li>
+        <li class="nav-item"><a href="#" class="calendarNav nav-link text-white">Calendar</a></li>
+        <li class="nav-item"><a href="#" class="charNav nav-link text-white">Chat</a></li>
+    </ul>
+</header>

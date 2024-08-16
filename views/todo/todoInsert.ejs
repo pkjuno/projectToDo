@@ -1,0 +1,50 @@
+<%- contentFor('body') %>
+<main>
+    <div class="b-example-divider"></div>
+    <div class="container px-4 py-5">
+        <h2 class="pb-2 border-bottom row">
+            <span class="col-4">할일관리 </span>
+            <span class="col-4"></span>
+            <button id="addTaskBtn" class="col-4 btn btn-lg mt-2 btn-outline-secondary justify-content-between">할일 등록</button>
+        </h2>
+
+        <div id="taskArea" class="row">
+            <div class="col-12">
+                <form id="todoForm" action="/todo/addTask" method="POST">
+                    <input type="hidden" id="regId" name="todo_reg_id" value="<%= session.user_email%>">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">타이틀</label>
+                        <input type="text" class="form-control" id="title" name="todo_title" placeholder="Enter your to-do" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">내용</label>
+                        <textarea class="form-control" id="contents" name="todo_contents" rows="3" placeholder="Enter a brief description"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="dueDate" class="form-label">시작일</label>
+                        <input type="date" class="form-control" id="startDate" name="todo_start_dt">
+                    </div>
+                    <div class="mb-3">
+                        <label for="dueDate" class="form-label">종료일</label>
+                        <input type="date" class="form-control" id="endDate" name="todo_end_dt">
+                    </div>
+                    <div class="mb-3">
+                        <label for="priority" class="form-label">우선순위</label>
+                        <select class="form-select" id="priority" name="todo_priority">
+                            <option value="3">Low</option>
+                            <option value="2">Medium</option>
+                            <option value="1">High</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">등록하기</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+<script>
+    $(function(){
+        // 본인이 등록한 todolist 가져오기
+
+    });
+</script>
